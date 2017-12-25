@@ -5,7 +5,7 @@ DTO-Input is a TypeScript helper library for reading GPIO pins from the device t
 In my sample implementation I use only a button and a rotary encoder. *By the way if somebody stzumbles over this and knows how two use multpli instances of a rotary encoder overlay without building a second or multiple overlays I would be grateful for an example or links explaining this subject.*
 
 ## State of the project
-Currently the library is still under development but already read the data, filters unrelevant data and provides the red data in an array. I still need to implement some kind of event or other interface for interacting with with this library.
+Currently the library is still under development but already reads the data, filters unrelevant data and provides the read data in an array. I still need to implement some kind of event or other interface for interacting with with this library.
 
 Missing:
 - Smaple DTS files for compiling an overlay
