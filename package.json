@@ -1,0 +1,34 @@
+{
+  "name": "dto-input",
+  "version": "0.0.0",
+  "description": "Helper for reading linux device tree overlays (simple input devives)",
+  "repository": {
+    "type": "git"
+  },
+  "keywords": [
+    "button",
+    "rotary",
+    "dto",
+    "device tree overlay",
+    "dts",
+    "gpio",
+    "beaglebone",
+    "raspberry",
+    "raspi",
+    "rpi",
+    "pi",
+    "linux"
+  ],
+  "author": "BertK",
+  "license": "MIT",
+  "scripts": {
+    "start": "npm run build && npm run serve",
+    "build": "npm run build-ts && npm run tslint",
+    "serve": "node dist/App.js",
+    "build-ts": "tsc",
+    "tslint": "tslint -c tslint.json -p tsconfig.json"
+  },
+  "devDependencies": {
+    "@types/node": "^8.5.1"
+  }
+}
