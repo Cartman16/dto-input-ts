@@ -17,11 +17,31 @@ Missing:
 - Complete the README
 
 ## Compiling sample overlays
+Complete the follwing steps for compiling and installing device tree overlay.
 
-tbd
+### Install device tree compiler
+On Raspbian install the device tree compiler with the following command:
+```
+sudo apt-get install device-tree-compiler
+```
+### Compile the overlay
+In the next step we will compile the overlay, copy it into the correct folder and add it to *config.txt*.
 
+**Compile the overlay**
+```
+dtc -@ -I dts -O dtb -o button-overlay.dtbo button-overlay.dts
+```
+**Copy the overlay**
+```
+sudo cp button-overlay.dtbo /boot/overlays/.
+```
+**Adjust boot config**
+Add the following line at the end of your /boot/config.txt.
+```
+dtoverlay=overlays/button-overlay.dtbo
+```
 ## Installing & testing device tree overlays
-tbd
+
 
 ## Installing library depencies
 
