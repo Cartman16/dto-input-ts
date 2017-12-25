@@ -35,5 +35,5 @@ If you need help understanding device tree overlay visit the following links.
 This project was inspired by [fivdi's gpio-button project](https://github.com/fivdi/gpio-button). This is not a fork of the fivdi's project. I wanted to learn JavaSrcipt but decided to use TypeScript due to I did not like JS's approach of beein not type safe. Also as a professional developer I wanted to you a more ES6 like approach. But I took a lot of knowledge out of fivdi's project and would like to thank him for that.
 
 tbd
--Kernel links
--Kernel data structure
+- Kernel links
+- Kernel data structure
