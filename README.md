@@ -1,7 +1,6 @@
 # dto-input-ts
 
-Installing Depencies
-
+##Installing Depencies
 In the library folder run the following command for installing the depencies.
 
-npm install --save @types/node
+'npm install --save @types/node'
