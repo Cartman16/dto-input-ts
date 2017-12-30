@@ -1,8 +1,8 @@
 # dto-input-ts
 
-DTO-Input is a TypeScript helper library for reading GPIO pins from the device tree utilizing the [device tree overlay](https://www.raspberrypi.org/documentation/configuration/device-tree.md) from the linux kernel. Using device tree overlays should enable you using this library on every single board computer. 
+DTO-Input is a TypeScript helper library for reading GPIO pins from the device tree utilizing the [device tree overlay](https://www.raspberrypi.org/documentation/configuration/device-tree.md) from the linux kernel. Using device tree overlays should enable you using this library on every single board computer like the raspberry pi. 
 
-In my sample implementation I use only a button and a rotary encoder. *By the way if somebody stzumbles over this and knows how two use multpli instances of a rotary encoder overlay without building a second or multiple overlays I would be grateful for an example or links explaining this subject.*
+In my sample implementation I use only a button and a rotary encoder. *By the way if somebody stumbles over this and knows how two use multpli instances of a rotary encoder overlay without building a second or multiple overlays I would be grateful for an example or links explaining this subject.*
 
 ## State of the project
 Currently the library is still under development but already reads the data, filters unrelevant data and provides the read data in an array. I still need to implement some kind of event or other interface for interacting with with this library.

@@ -41,7 +41,7 @@ class DtoInput extends EventEmitter {
             console.log("Code: " + element.Code);
             console.log("Value: " + element.Value);
         }
-        emit("data", DataArray);
+        this.emit("data", DataArray);
     }
 }
 
