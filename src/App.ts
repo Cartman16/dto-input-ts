@@ -11,7 +11,5 @@ Input.addDevice("/dev/input/by-path/platform-soc\:button25-event");
 Input.addDevice("/dev/input/by-path/platform-rotary@0-event");
 
 let listener = function listener(eventData: DtoEventData) {
-    console.log("listner1 executed.");
-    console.log("Received data:");
     console.log(" Value: " + eventData.Value + " Code: " + eventData.Code + " Type: " + eventData.Type);
 };
