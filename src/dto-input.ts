@@ -8,7 +8,7 @@ class DtoInput extends EventEmitter {
     _ChunkSize: number;
     constructor() {
         super();
-        this._ChunkSize = 8;
+        this._ChunkSize = 16;
         this.Data = new Array();
     }
 
