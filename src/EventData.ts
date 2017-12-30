@@ -14,27 +14,27 @@ export class DtoEventData {
         this.ValueB = new Array();
     }
 
-    get Seconds() {
+    get Seconds(): number {
         const revArray = EventDataHelper.ReverseArray(this.SecondsB);
         return EventDataHelper.BinaryToInt(revArray);
     }
 
-    get MicroSeconds() {
+    get MicroSeconds(): number {
         const revArray = EventDataHelper.ReverseArray(this.MicroSecondsB);
         return EventDataHelper.BinaryToInt(revArray);
     }
 
-    get Value() {
+    get Value(): number {
         const revArray = EventDataHelper.ReverseArray(this.ValueB);
         return EventDataHelper.BinaryToInt(revArray);
     }
 
-    get Type() {
+    get Type(): number {
         const revArray = EventDataHelper.ReverseArray(this.TypeB);
         return EventDataHelper.BinaryToInt(revArray);
     }
 
-    get Code() {
+    get Code(): number {
         const revArray = EventDataHelper.ReverseArray(this.CodeB);
         return EventDataHelper.BinaryToInt(revArray);
     }

@@ -1,11 +1,11 @@
-import { EventData } from "./EventData";
+import { DtoEventData } from "./EventData";
 
 class EventDataFactory {
 
-    static processRawData(RawData: Uint8Array, chunkSize: number) {
-        const RetArray = new Array();
+    static processRawData(RawData: Uint8Array, chunkSize: number, EventData : DtoEventData[]) {
+        let retValue = false;
         while (RawData.length > 0) {
-            const row = new EventData();
+            const row = new DtoEventData();
             for (let i = 0; i < chunkSize; i++) {
                 const element = RawData[i];
                 switch (true) {
@@ -27,11 +27,12 @@ class EventDataFactory {
                 }
             }
             if (row.Type >= 1) {
-                RetArray.push(row);
+                retValue = true;
+                EventData.push(row);
             }
             RawData = RawData.subarray(chunkSize);
         }
-        return RetArray;
+        return retValue;
     }
 }
 

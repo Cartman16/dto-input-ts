@@ -2,14 +2,15 @@ import { EventDataFactory } from "./EventDataFactory";
 import * as FileSystem from "fs";
 import { EventEmitter } from "events";
 import { emit } from "cluster";
+import { DtoEventData, EventData } from "./EventData";
 
 class DtoInput extends EventEmitter {
-    Data: any[];
+    _Data: DtoEventData[];
     _ChunkSize: number;
     constructor() {
         super();
         this._ChunkSize = 16;
-        this.Data = new Array();
+        this._Data = new Array<DtoEventData>();
     }
 
     set ChunkSize(n) {
@@ -20,11 +21,14 @@ class DtoInput extends EventEmitter {
         return this._ChunkSize;
     }
 
+    get Data() {
+        return this._Data;
+    }
+
     addDevice(path: string) {
         let RawData;
         if (FileSystem.existsSync(path)) {
             FileSystem.createReadStream(path).on("data", function(buf: any) {
-                // RawData = Buffer.concat([RawData, buf]);
                 RawData = new Uint8Array(buf);
                 this.processDataRows(RawData);
             }.bind(this));
@@ -34,14 +38,12 @@ class DtoInput extends EventEmitter {
     }
 
     processDataRows(row: Uint8Array) {
-        const DataArray = EventDataFactory.processRawData(row, this.ChunkSize);
-        for (let index = 0; index < DataArray.length; index++) {
-            const element = DataArray[index];
-            console.log("Type: " + element.Type);
-            console.log("Code: " + element.Code);
-            console.log("Value: " + element.Value);
+        let EventData = new Array<DtoEventData>();
+        const HasReadData = EventDataFactory.processRawData(row, this.ChunkSize, EventData);
+        if (HasReadData) {
+            this._Data.push(EventData[0]);
+            this.emit("data", EventData[0]);
         }
-        this.emit("data", DataArray);
     }
 }
 

@@ -15,7 +15,7 @@ class EventDataHelper {
         const buffer = Buffer.from(UintArr);
         const result = buffer.readIntBE(0, length);
 
-        return result;
+        return result as number;
     }
 }
 
