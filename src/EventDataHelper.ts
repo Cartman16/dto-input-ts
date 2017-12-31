@@ -2,10 +2,11 @@ class EventDataHelper {
     static ReverseArray(UintArr: any[]) {
         const newArray = new Array();
         const ArrayLength = UintArr.length;
-        for (let i = 0; i < ArrayLength; i++) {
-            const element = UintArr.pop();
+        for (let i = ArrayLength - 1; i >= 0; i--) {
+            const element = UintArr[i];
             newArray.push(element);
         }
+        console.log("Array passed:" + UintArr + " Reverse Array: " + newArray);
         return newArray;
     }
 
