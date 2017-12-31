@@ -25,6 +25,10 @@ class DtoInput extends EventEmitter {
         return this._Data;
     }
 
+    clearData() {
+        this._Data = new Array<DtoEventData>();
+    }
+
     addDevice(path: string) {
         let RawData;
         if (FileSystem.existsSync(path)) {
