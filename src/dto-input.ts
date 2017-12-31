@@ -42,7 +42,7 @@ class DtoInput extends EventEmitter {
     }
 
     processDataRows(row: Uint8Array) {
-        let EventData = new Array<DtoEventData>();
+        const EventData = new Array<DtoEventData>();
         const HasReadData = EventDataFactory.processRawData(row, this.ChunkSize, EventData);
         if (HasReadData) {
             this._Data.push(EventData[0]);

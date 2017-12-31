@@ -2,7 +2,7 @@ import { DtoEventData } from "./EventData";
 
 class EventDataFactory {
 
-    static processRawData(RawData: Uint8Array, chunkSize: number, EventData : DtoEventData[]) {
+    static processRawData(RawData: Uint8Array, chunkSize: number, EventData: DtoEventData[]) {
         let retValue = false;
         while (RawData.length > 0) {
             const row = new DtoEventData();
